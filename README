@@ -1,0 +1,54 @@
+Description
+--------------------------------------------------------------------------------
+URL-CPP is a simple URL parsing and container class for RFC 1738 Uniform
+Resource Locators (URL) data. It was written for use with a Boost C++ ASIO HTTP
+Server and Client systems, as an attempt to cleanly handle both fully-qualifed
+and relative URL paths for HTTP.
+
+License
+--------------------------------------------------------------------------------
+Copyright ( c ) 2006-2016 Metasystems Technologies Inc. (www.mtihq.com)
+                          Nicholas Van Wyen
+
+Distributed under the Boost Software License, Version 1.0. ( See accompanying
+file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt ) or
+included ./LICENSE file
+
+Build
+--------------------------------------------------------------------------------
+URL-CPP is intended to be included as a class library, but come with a test
+harness which can be built from source. To build the test harness, use make ...
+
+    $ make clean && make
+
+Use
+--------------------------------------------------------------------------------
+To use URL-CPP in you project, simply include the url.hpp and url.cpp as
+approrirate.
+
+Examples
+--------------------------------------------------------------------------------
+
+fully qualifed
+----------------------------------------
+
+./test "http://foo.com"
+./test "http://foo.com/path.html"
+./test "http://foo.com/very/long/path.html"
+./test "http://foo.com/very/long/path.html?p1=v1"
+./test "http://foo.com/very/long/path.html?p1=v1&p2=v2"
+./test "http://foo.com/very/long/path.html#f1=x1"
+./test "http://foo.com/very/long/path.html#f1=x1&f2=x2"
+./test "http://jdoe:secret@foo.com/very/long/path.html?p1=v1&p2=v2#more-details"
+./test "https://jdoe:secret@foo.com:8888/very/long/path.html?p1=v1&p2=v2#more-details=a:b"
+
+relative
+----------------------------------------
+
+./test "/"
+./test "/path.html"
+./test "/very/long/path.html"
+./test "/very/long/path.html?p1=v1"
+./test "/very/long/path.html?p1=v1&p2=v2"
+./test "/very/long/path.html#f1=x1"
+./test "/very/long/path.html#f1=x1&f2=x2"
