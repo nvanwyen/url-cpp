@@ -10,9 +10,13 @@
 #
 
 all: test
+debug: testd
 
 test: test.cpp url.hpp url.cpp
 	@g++ -o test test.cpp url.cpp
+
+testd: test.cpp url.hpp url.cpp
+	@g++ -g -o testd test.cpp url.cpp
 
 clean:
 	@rm -f test *.o
